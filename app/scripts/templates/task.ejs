@@ -1,0 +1,8 @@
+<form>
+  <input class="edit" type="hidden" name="_id" value="<%= _id %>" />
+  <input type="checkbox" name="done" <%= done ? 'checked="checked"' : '' %> />
+  <span class="normal title"><%= title %></span>
+  <input class="edit" type="text" name="title" value="<%= title %>" />
+  <button class="edit save">save</button>
+  <button class="edit delete">X</button>
+</form>
