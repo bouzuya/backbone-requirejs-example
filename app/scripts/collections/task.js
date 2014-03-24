@@ -1,8 +1,4 @@
-/* global App, Backbone */
-
-App.Collections = App.Collections || {};
-
-(function () {
+define('collections/task', ['backbone', 'namespace', 'models/task'], function(Backbone, App) {
   'use strict';
 
   App.Collections.TaskCollection = Backbone.Collection.extend({
@@ -17,4 +13,5 @@ App.Collections = App.Collections || {};
 
   });
 
-})();
+  return App.Collections.TaskCollection;
+});

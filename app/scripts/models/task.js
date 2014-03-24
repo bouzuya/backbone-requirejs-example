@@ -1,26 +1,23 @@
-/*global App, Backbone*/
+define('models/task', ['backbone', 'namespace'], function(Backbone, App) {
+  'use strict';
 
-App.Models = App.Models || {};
+  App.Models.TaskModel = Backbone.Model.extend({
 
-(function () {
-    'use strict';
+    idAttribute: '_id', // for MongoDB
 
-    App.Models.TaskModel = Backbone.Model.extend({
+    initialize: function() {
+    },
 
-        idAttribute: '_id', // for MongoDB
+    defaults: {
+    },
 
-        initialize: function() {
-        },
+    validate: function(attrs, options) {
+    },
 
-        defaults: {
-        },
+    parse: function(response, options)  {
+      return response;
+    }
+  });
 
-        validate: function(attrs, options) {
-        },
-
-        parse: function(response, options)  {
-            return response;
-        }
-    });
-
-})();
+  return App.Models.TaskModel;
+});

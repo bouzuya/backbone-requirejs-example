@@ -1,8 +1,4 @@
-/*global App, Backbone, JST*/
-
-App.Views = App.Views || {};
-
-(function () {
+define('views/task-collection', ['templates', 'backbone', 'namespace', 'views/task'], function(JST, Backbone, App) {
   'use strict';
 
   App.Views.TaskCollectionView = Backbone.View.extend({
@@ -58,4 +54,5 @@ App.Views = App.Views || {};
 
   });
 
-})();
+  return App.Views.TaskCollectionView;
+});

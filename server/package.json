@@ -1,16 +1,22 @@
 {
   "name": "server",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "todo server",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express-resource": "^1.0.0",
-    "express": "^3.4.8",
-    "cors": "^2.1.1"
-  }
+    "cors": "~2.1.1",
+    "express": "~3.4.8",
+    "express-resource": "~1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouzuya/backbone-todo.git"
+  },
+  "author": "bouzuya",
+  "license": "ISC"
 }

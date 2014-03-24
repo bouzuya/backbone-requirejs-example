@@ -1,9 +1,13 @@
-/* global App */
+define('namespace', [], function() {
+  'use strict';
 
-window.App = {
-  Models: {},
-  Collections: {},
-  Views: {},
-  Routers: {}
-};
+  var App = {
+    Models: {},
+    Collections: {},
+    Views: {},
+    Routers: {}
+  };
+
+  return App;
+});
 

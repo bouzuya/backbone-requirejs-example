@@ -1,8 +1,4 @@
-/*global App, Backbone, JST*/
-
-App.Views = App.Views || {};
-
-(function () {
+define('views/app', ['templates', 'backbone', 'namespace', 'collections/task', 'views/home', 'views/task-collection'], function(JST, Backbone, App, TaskCollection, HomeView, TaskCollectionView) {
   'use strict';
 
   App.Views.AppView = Backbone.View.extend({
@@ -14,8 +10,7 @@ App.Views = App.Views || {};
     id: 'app',
 
     events: {
-      'click #read': 'onClickReadButton',
-      'click #create': 'onClickCreateButton',
+      'click #reload': 'onClickReloadButton',
       'click #save': 'onClickSaveButton'
     },
 
@@ -31,25 +26,28 @@ App.Views = App.Views || {};
 
     render: function() {
       this.$el.empty();
-      this.$el.append($('<button id="create">create</button>'));
-      this.$el.append($('<button id="read">read</button>'));
-      this.$el.append($('<input type="text" id="_id" value="0" /><input type="text" id="title" value="title" /><input type="checkbox" id="done" checked="checked" /><button id="save">save</button>'));
+      this.$el.append($('<button id="reload">reload</button>'));
+      this.$el.append($('<input type="text" id="title" value="title" /><button id="save">save</button>'));
       this.$el.append(this.homeView.render().$el);
       this.$el.append(this.taskCollectionView.render().$el);
+
+      this.taskCollection.fetch();
       return this;
     },
 
-    onClickReadButton: function() {
+    onClickReloadButton: function(e) {
+      e.preventDefault();
       this.taskCollection.fetch();
     },
 
-    onClickCreateButton: function() {
+    onClickSaveButton: function(e) {
+      e.preventDefault();
       this.taskCollection.create({
-        title: 'title' + this.taskCollection.length,
+        title: $('#title').val(),
         done: false
       });
     },
-
   });
 
-})();
+  return App.Views.AppView;
+});

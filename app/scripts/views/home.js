@@ -1,8 +1,4 @@
-/*global App, Backbone, JST*/
-
-App.Views = App.Views || {};
-
-(function () {
+define('views/home', ['templates', 'backbone', 'namespace'], function(JST, Backbone, App) {
   'use strict';
 
   App.Views.HomeView = Backbone.View.extend({
@@ -27,4 +23,5 @@ App.Views = App.Views || {};
 
   });
 
-})();
+  return App.Views.HomeView;
+});

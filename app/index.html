@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>backbone</title>
+    <title>todo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- build:css(.tmp) styles/main.css -->
@@ -12,28 +12,11 @@
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/task.css">
     <!-- endbuild -->
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- build:js scripts/vendor.modernizr.js -->
+    <script src="scripts/vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
-    <!-- build:js scripts/vendor.js -->
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <script src="bower_components/backbone/backbone.js"></script>
-    <!-- endbuild -->
-    
-    <!-- build:js({.tmp,app}) scripts/main.js -->
-    <script src="scripts/namespace.js"></script>
-    <script src="scripts/templates.js"></script>
-    <script src="scripts/models/task.js"></script>
-    <script src="scripts/collections/task.js"></script>
-    <script src="scripts/views/task-collection.js"></script>
-    <script src="scripts/views/home.js"></script>
-    <script src="scripts/views/app.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/views/task.js"></script>
-    <!-- endbuild -->
+    <script data-main="scripts/main", src="scripts/vendor/requirejs/require.js"></script>
   </body>
 </html>

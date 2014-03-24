@@ -1,8 +1,4 @@
-/*global App, Backbone, JST*/
-
-App.Views = App.Views || {};
-
-(function () {
+define('views/task', ['templates', 'backbone', 'namespace'], function(JST, Backbone, App) {
   'use strict';
 
   App.Views.TaskView = Backbone.View.extend({
@@ -26,7 +22,7 @@ App.Views = App.Views || {};
 
     render: function() {
       var json = this.model.toJSON();
-      var html = this.template(json);
+      var html = this.template({ model: json });
       this.$el.html(html);
       return this;
     },
@@ -62,8 +58,7 @@ App.Views = App.Views || {};
       this.model.destroy();
     },
 
-
-
   });
 
-})();
+  return App.Views.TaskView;
+});

@@ -1,8 +1,8 @@
 <form>
-  <input class="edit" type="hidden" name="_id" value="<%= _id %>" />
-  <input type="checkbox" name="done" <%= done ? 'checked="checked"' : '' %> />
-  <span class="normal title"><%= title %></span>
-  <input class="edit" type="text" name="title" value="<%= title %>" />
+  <input class="edit" type="hidden" name="_id" value="<%= model._id %>" />
+  <input type="checkbox" name="done" <%= model.done ? 'checked="checked"' : '' %> />
+  <span class="normal title"><%= model.title %></span>
+  <input class="edit" type="text" name="title" value="<%= model.title %>" />
   <button class="edit save">save</button>
   <button class="edit delete">X</button>
 </form>
